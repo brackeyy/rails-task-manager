@@ -1,0 +1,11 @@
+<h1>Here are all your tasks.</h1>
+<br>
+<ul style="list-style: none;">
+  <% @tasks.each do |task| %>
+    <% if task.completed %>
+      <li><i class='fas fa-check-square'></i><%=link_to task.title , task_path(task.id)%>: <%= task.details%></li>
+    <% else %>
+        <li><i class='far fa-square'></i><%=link_to task.title , task_path(task.id)%>: <%= task.details%></li>
+    <% end %>
+  <% end %>
+</ul>
